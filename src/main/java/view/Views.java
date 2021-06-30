@@ -14,10 +14,10 @@ public class Views {
     public static ViewAbstract getView() {
 
 
-        System.out.println("Напишите цифру запроса по которому хотите получить статистику\n" +
-                "1. Отобразить дублирующие записи, с количеством повторений\n" +
-                "2. Посчитать, сколько в каждом городе: 1,2,3,4 и 5 этажных зданий\n" +
-                "3. Выход");
+        System.out.println("Write the number of the request for which you want to get statistics\n" +
+                "1. Display duplicate records, with the number of repetitions\n" +
+                "2. Calculate how many in each city: 1,2,3,4 and 5 storey buildings\n" +
+                "3. Exit");
 
 
         int type = scanner.nextInt();
@@ -36,7 +36,7 @@ public class Views {
             case 3:
                 exit();
             default:
-                System.out.println("Вы ввели неправильный запрос! Попробуйте еще раз");
+                System.out.println("You entered an invalid request! try again");
                 System.out.println("\n=========================================================\n");
                 return getView();
         }
@@ -50,7 +50,7 @@ public class Views {
 
     private static void duplicateAddress() {
 
-        System.out.println("Запрос обрабатывается...");
+        System.out.println("Request processing ...");
 
         SaxParserGetAllAddressRepository saxParser = new SaxParserGetAllAddressRepository();
 
@@ -64,7 +64,7 @@ public class Views {
 
     private static void floorsOfInCity() {
 
-        System.out.println("Запрос обрабатывается...");
+        System.out.println("Request processing ...");
 
         SaxParserForFloorsAddressRepository saxParserForFloor = new SaxParserForFloorsAddressRepository();
 

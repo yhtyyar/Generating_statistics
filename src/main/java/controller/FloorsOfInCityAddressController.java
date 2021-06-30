@@ -45,7 +45,7 @@ public class FloorsOfInCityAddressController {
 
             stringBuilder = new StringBuilder();
 
-            System.out.println("Количество 1,2,3,4 и 5 этажных зданий в городе " + str);
+            System.out.println("The number of 1,2,3,4 and 5 storey buildings in the city " + str);
 
             Iterator<String> iteratorCityName = cityNameList.iterator();
 
@@ -84,11 +84,11 @@ public class FloorsOfInCityAddressController {
                 }
             }
 
-            stringBuilder.append("Одноэтажных домов: ").append(oneStory).append(" | ")
-                    .append("Двухэтажных домов: ").append(twoStory).append(" | ")
-                    .append("Трехэтажных домов: ").append(threeStory).append(" | ")
-                    .append("Четырехэтажных домов: ").append(fourStory).append(" | ")
-                    .append("Пятиэтажных домов: ").append(fiveStory).append(" | ");
+            stringBuilder.append("One-story houses: ").append(oneStory).append(" | ")
+                    .append("Two-story houses: ").append(twoStory).append(" | ")
+                    .append("Three-story houses: ").append(threeStory).append(" | ")
+                    .append("Four-story houses: ").append(fourStory).append(" | ")
+                    .append("Five-story houses: ").append(fiveStory).append(" | ");
 
             System.out.println(stringBuilder + "\n\n");
 

@@ -29,7 +29,6 @@ public class DuplicateAddressController {
                 .filter(n -> {
                     // при добавлении в HashSet одинаковых значений вернет false
                     if (!allItems.add(n)) {
-
                         return true;
                     }
                     return false;
@@ -49,9 +48,8 @@ public class DuplicateAddressController {
                 }
             }
 
-            System.out.println(result + " | Количество повторений:" + copy);
+            System.out.println(result + " | Number of repetitions: " + copy);
         }
-
     }
 
     @Override

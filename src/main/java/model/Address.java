@@ -17,10 +17,10 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Адрес: " +
-                " город: " + cityName  +
-                " улица: " + streetName +
-                " дом: " + houseNumber +
-                " этаж: " + floor;
+        return "Address: " +
+                " city: " + cityName  +
+                " street: " + streetName +
+                " house: " + houseNumber +
+                " floor: " + floor;
     }
 }

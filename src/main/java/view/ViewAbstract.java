@@ -17,8 +17,8 @@ public abstract class ViewAbstract {
 
     public void start() {
 
-        System.out.println("Напишите: \n" + BACK + " - для того, чтобы вернуться назад\n" +
-                EXIT + " - для выхода из программы\n");
+        System.out.println("Write: \n" + BACK + " - in order to go back\n" +
+                EXIT + " - to exit the program\n");
 
         while (!interrupt) {
 
@@ -36,7 +36,7 @@ public abstract class ViewAbstract {
                     break;
 
                 default:
-                    System.out.println("Ошибка!  Вы ввели неизвестный запрос! Попробуйте еще раз...");
+                    System.out.println("Error! You entered an unknown request! Try again...");
                     break;
             }
         }
