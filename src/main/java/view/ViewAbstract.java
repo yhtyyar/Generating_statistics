@@ -46,7 +46,6 @@ public abstract class ViewAbstract {
     abstract void back();
 
     void exit() {
-
         interrupt = true;
     }
 }

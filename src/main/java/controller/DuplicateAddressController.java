@@ -1,24 +1,24 @@
 package controller;
 
-import repository.SaxParserGetAllAddressRepository;
+import parser.XMLHandler;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class DuplicateAddressController {
 
-    private final SaxParserGetAllAddressRepository saxParserDuplicateAddressRepository;
-    private static final List<String> addressList = new ArrayList<>();
+    private final XMLHandler xmlHandler;
 
-    public DuplicateAddressController(SaxParserGetAllAddressRepository saxParserDuplicateAddressRepository) {
+    private final List<String> addressList = new ArrayList<>();
 
-        this.saxParserDuplicateAddressRepository = saxParserDuplicateAddressRepository;
+    public DuplicateAddressController(XMLHandler xmlHandler) {
+        this.xmlHandler = xmlHandler;
     }
 
 
     public void getDuplicateEntries() {
 
-        addressList.addAll(saxParserDuplicateAddressRepository.getAllInList());
+        addressList.addAll(xmlHandler.getAllInList());
 
         String[] array = new String[addressList.size()];
         addressList.toArray(array);
@@ -30,8 +30,10 @@ public class DuplicateAddressController {
                     // при добавлении в HashSet одинаковых значений вернет false
                     if (!allItems.add(n)) {
                         return true;
+                    } else {
+                        return false;
                     }
-                    return false;
+
                 })
                 .collect(Collectors.toList());
 
@@ -50,23 +52,6 @@ public class DuplicateAddressController {
 
             System.out.println(result + " | Number of repetitions: " + copy);
         }
-    }
-
-    @Override
-    public int hashCode() {
-
-        if (addressList == null) {
-            return 0;
-        }
-
-        int result = 31;
-
-        for (String element : addressList) {
-
-            result = 31 * result + (element == null ? 0 : element.hashCode());
-        }
-
-        return result;
     }
 
 }

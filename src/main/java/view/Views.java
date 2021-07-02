@@ -2,8 +2,7 @@ package view;
 
 import controller.DuplicateAddressController;
 import controller.FloorsOfInCityAddressController;
-import repository.SaxParserForFloorsAddressRepository;
-import repository.SaxParserGetAllAddressRepository;
+import parser.XMLHandler;
 
 import java.util.Scanner;
 
@@ -20,21 +19,21 @@ public class Views {
                 "3. Exit");
 
 
-        int type = scanner.nextInt();
+        String type = scanner.nextLine();
 
         switch (type) {
 
-            case 1:
+            case "1":
                 duplicateAddress();
                 return AddressView.getInstance();
 
-            case 2:
+            case "2":
                 floorsOfInCity();
                 return AddressView.getInstance();
 
-
-            case 3:
+            case "3":
                 exit();
+
             default:
                 System.out.println("You entered an invalid request! try again");
                 System.out.println("\n=========================================================\n");
@@ -43,7 +42,6 @@ public class Views {
     }
 
     private static void exit() {
-
         System.exit(0);
     }
 
@@ -52,10 +50,8 @@ public class Views {
 
         System.out.println("Request processing ...");
 
-        SaxParserGetAllAddressRepository saxParser = new SaxParserGetAllAddressRepository();
-
-        DuplicateAddressController duplicate = new DuplicateAddressController(saxParser);
-
+        XMLHandler xmlHandler = new XMLHandler();
+        DuplicateAddressController duplicate = new DuplicateAddressController(xmlHandler);
         duplicate.getDuplicateEntries();
 
         System.out.println("\n=========================================================\n");
@@ -66,10 +62,8 @@ public class Views {
 
         System.out.println("Request processing ...");
 
-        SaxParserForFloorsAddressRepository saxParserForFloor = new SaxParserForFloorsAddressRepository();
-
-        FloorsOfInCityAddressController floors = new FloorsOfInCityAddressController(saxParserForFloor);
-
+        XMLHandler xmlHandler = new XMLHandler();
+        FloorsOfInCityAddressController floors = new FloorsOfInCityAddressController(xmlHandler);
         floors.floorsOfInCity();
 
         System.out.println("\n=========================================================\n");

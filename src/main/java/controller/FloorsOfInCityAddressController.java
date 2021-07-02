@@ -1,29 +1,27 @@
 package controller;
 
-import repository.SaxParserForFloorsAddressRepository;
+import parser.XMLHandler;
 
 import java.util.*;
 
 public class FloorsOfInCityAddressController {
 
-    private final SaxParserForFloorsAddressRepository saxParserForFloorsAddressRepository;
+    private final XMLHandler xmlHandler;
 
 
-    private static final Set<String> addressSet = new TreeSet<>();
-    private static final List<String> cityNameList = new LinkedList<>();
-    private static final List<Integer> floorList = new LinkedList<>();
+    private final Set<String> addressSet = new TreeSet<>();
+    private final List<String> cityNameList = new LinkedList<>();
+    private final List<Integer> floorList = new LinkedList<>();
 
 
-    public FloorsOfInCityAddressController(SaxParserForFloorsAddressRepository saxParserForFloorsAddressRepository) {
-
-        this.saxParserForFloorsAddressRepository = saxParserForFloorsAddressRepository;
+    public FloorsOfInCityAddressController(XMLHandler xmlHandler) {
+        this.xmlHandler = xmlHandler;
     }
 
     public void floorsOfInCity() {
 
-        cityNameList.addAll(saxParserForFloorsAddressRepository.getCityNameList());
-        floorList.addAll(saxParserForFloorsAddressRepository.getFloorsOfInCity());
-
+        cityNameList.addAll(xmlHandler.getCityNameList());
+        floorList.addAll(xmlHandler.getFloors());
         addressSet.addAll(cityNameList);
 
         int oneStory;
