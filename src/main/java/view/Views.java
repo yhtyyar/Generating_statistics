@@ -13,7 +13,7 @@ public class Views {
     public static ViewAbstract getView() {
 
 
-        System.out.println("Write the number of the request for which you want to get statistics\n" +
+        System.out.println("Write the number of the request for which you want to get statistics\n\n" +
                 "1. Display duplicate records, with the number of repetitions\n" +
                 "2. Calculate how many in each city: 1,2,3,4 and 5 storey buildings\n" +
                 "3. Exit");

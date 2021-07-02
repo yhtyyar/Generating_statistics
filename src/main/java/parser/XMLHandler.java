@@ -68,6 +68,7 @@ public class XMLHandler extends DefaultHandler{
         super.startDocument();
     }
 
+
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
 
@@ -81,10 +82,12 @@ public class XMLHandler extends DefaultHandler{
             cityNameList.add(cityName);
             floorList.add(floor);
 
+        } else {
+
+            // не знаю как правильно обрабатывать при отсутвии атрибутов
+            System.out.println("");
         }
     }
-
-
 
     public List<String> getAllInList() {
         return addressList;

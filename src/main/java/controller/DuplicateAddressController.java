@@ -26,15 +26,7 @@ public class DuplicateAddressController {
         Set<String> allItems = new HashSet<>();
 
         List<String> duplicates = Arrays.stream(array)
-                .filter(n -> {
-                    // при добавлении в HashSet одинаковых значений вернет false
-                    if (!allItems.add(n)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-
-                })
+                .filter(n -> !allItems.add(n))  // при добавлении в HashSet одинаковых значений вернет false
                 .collect(Collectors.toList());
 
         Set<String> resultDuplicates = new HashSet<>(duplicates);
