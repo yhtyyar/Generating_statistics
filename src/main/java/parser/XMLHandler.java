@@ -84,12 +84,12 @@ public class XMLHandler extends DefaultHandler{
 
         } else {
 
-            // не знаю как правильно обрабатывать при отсутвии атрибутов
+            // РЅРµ Р·РЅР°СЋ РєР°Рє РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ РїСЂРё РѕС‚СЃСѓС‚СЃС‚РІРёРё Р°С‚СЂРёР±СѓС‚РѕРІ
             System.out.println("");
         }
     }
 
-    public List<String> getAllInList() {
+    public List<String> getAddressList() {
         return addressList;
     }
 

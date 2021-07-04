@@ -24,7 +24,6 @@ public abstract class ViewAbstract {
 
             String console = scanner.nextLine();
 
-
             switch (console) {
 
                 case BACK:

@@ -18,7 +18,7 @@ public class DuplicateAddressController {
 
     public void getDuplicateEntries() {
 
-        addressList.addAll(xmlHandler.getAllInList());
+        addressList.addAll(xmlHandler.getAddressList());
 
         String[] array = new String[addressList.size()];
         addressList.toArray(array);
@@ -42,8 +42,9 @@ public class DuplicateAddressController {
                 }
             }
 
-            System.out.println(result + " | Number of repetitions: " + copy);
+            System.out.println(result + " | Number of repetitions: " + copy + "\n");
         }
+
     }
 
 }

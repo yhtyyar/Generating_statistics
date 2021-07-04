@@ -1,7 +1,7 @@
 package view;
 
 import controller.DuplicateAddressController;
-import controller.FloorsOfInCityAddressController;
+import controller.FloorsOfInCityController;
 import parser.XMLHandler;
 
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Views {
         System.out.println("Write the number of the request for which you want to get statistics\n\n" +
                 "1. Display duplicate records, with the number of repetitions\n" +
                 "2. Calculate how many in each city: 1,2,3,4 and 5 storey buildings\n" +
-                "3. Exit");
+                "3. Exit\n");
 
 
         String type = scanner.nextLine();
@@ -63,7 +63,7 @@ public class Views {
         System.out.println("Request processing ...");
 
         XMLHandler xmlHandler = new XMLHandler();
-        FloorsOfInCityAddressController floors = new FloorsOfInCityAddressController(xmlHandler);
+        FloorsOfInCityController floors = new FloorsOfInCityController(xmlHandler);
         floors.floorsOfInCity();
 
         System.out.println("\n=========================================================\n");

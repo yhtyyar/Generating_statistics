@@ -4,7 +4,7 @@ import parser.XMLHandler;
 
 import java.util.*;
 
-public class FloorsOfInCityAddressController {
+public class FloorsOfInCityController {
 
     private final XMLHandler xmlHandler;
 
@@ -14,7 +14,7 @@ public class FloorsOfInCityAddressController {
     private final List<Integer> floorList = new LinkedList<>();
 
 
-    public FloorsOfInCityAddressController(XMLHandler xmlHandler) {
+    public FloorsOfInCityController(XMLHandler xmlHandler) {
         this.xmlHandler = xmlHandler;
     }
 
